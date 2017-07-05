@@ -17,16 +17,15 @@ def lower_to_upper_ascii(mystr):
     for i in mystr:
         #print "i = " + i + "and Asci value = " +str(ord(i))
 
-        if i == " ":
-            upperCaseWord += " "
-
-        j = ord(i) - 32
-        upperCaseWord += chr(j)
+        if i in 'qwertyuiopasdfghjklzxcvbnm':
+            upperCaseWord += chr(ord(i) - 32)
+        else:
+            upperCaseWord += i
 
     return upperCaseWord
 
 
-mystr = "san jose state university"
+mystr = "San jose state university"
 
 print lower_to_upper(mystr)
 print lower_to_upper_ascii(mystr)
