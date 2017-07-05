@@ -14,6 +14,10 @@ list2 = [0] * CHAR
 name1 = "abhijeet"
 name2 = "bhiteeja"
 
+if len(name1) != len(name2):
+    print "Not an Anagram"
+	sys.exit()
+	
 # name1 to list1
 for i in range(len(name1)):
     list1[ord(name1[i])] += 1
