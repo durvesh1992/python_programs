@@ -20,7 +20,7 @@ for i in range(len(name1)):
 #print list1
 
 #name2 to list2
-for i in range(len(name2)):
+#for i in range(len(name2)):
     list2[ord(name2[i])] += 1
 
 #print list2
