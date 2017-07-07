@@ -11,13 +11,22 @@ print "Shopping Basket Options: \n" \
 option = int(input("Enter an option: "))
 while option != 0:
     if option == 1:
-        pass
+        item = raw_input("Enter an Item: ")
+        if item in shopping_basket:
+            print "Item already in basket"
+            qnty = int(input("Enter Quantity: "))
+            shopping_basket[item] += qnty
+        else:
+            qnty = int(input("Enter Quantity: "))
+            shopping_basket[item] = qnty
     elif option == 2:
-        pass
+        item = raw_input("Enter an Item")
+        del shopping_basket[item]
     elif option == 3:
-        pass
+         for item in shopping_basket:
+             print item,":",shopping_basket[item]
     elif option != 0:
         print "Please enter the correct option "
-    pass
+    option = int(input("Enter an option: "))
 
 print "Shoppnig Basket is closed"
