@@ -1,0 +1,66 @@
+Python OOPS:
+1) Why class(object) and class: is valid
+2) what is self
+3) Exaplain staticMethod and ClassMethod
+4) python method overloading and overriding
+5) what is python decorator
+6) what is python assert
+7) What is super class and explain with example
+8) What is inheritance and explain with an example
+9) what is __init__ and why is it used ?
+10) Python function value change
+
+4) Python method overloading and overriding
+Python doesnt use method overloading exactly the way java works. In java we have multiple functions in the same class and we pass different values to these functions. By different values, we mean that we can change the method type or the type of values we are passing to the method.
+
+Python is different and when you create multiple methods with the same name in the class, the newly created method will be accessed by the object and not the old methods. However, Python method overloading is possible in another way. See the code below for the first method:-
+
+Python method overloading method 1
+
+class Human(object):
+
+    def say_hello(self, name= None):
+        if name != None:
+            print "Hello", name
+        else:
+            print "You should get a name for yourself"
+
+    # Output goes only into the second function...why ???
+    def say_hello(self, *args):
+        print "I am in second function"
+
+h1 = Human()
+h1.say_hello()
+
+# User getting a name for itself
+h1.say_hello("Aditya")
+
+Output:
+you should get a name for yourself
+Hello Aditya
+
+Python method overloading method 2
+
+class Human(object):
+
+    def say_hello(self, *args, **kwargs):
+
+        if args:
+            for names in args:
+                print "Hello; ", names
+
+        if kwargs:
+            for cars in kwargs:
+                print "Carname: ", kwargs[cars]
+
+h1 = Human()
+h1.say_hello()
+
+# Sending args
+h1.say_hello("Aditya", "Tanmay")
+
+#Sending KwARGS
+h1.say_hello("Aditya", "Tanmay", car = "DodgeCharger")
+
+
+END
